@@ -441,7 +441,7 @@ timeButtons.forEach(btn => {
 
 updateActiveTime();
 
-// === Calculator Logic FIXED ===
+// === Compact Calculator Logic ===
 const calcInput = document.getElementById('calc-input');
 const calcBtn = document.getElementById('calc-btn');
 const calcResult = document.getElementById('calc-result');
@@ -451,35 +451,31 @@ function applyCalcLang() {
     if (!calcInput) return;
     if (lang === 'ru') {
         calcTitle.textContent = "Расчёт суммы";
-        calcBtn.textContent = "Рассчитать";
-        calcInput.placeholder = "Введите сумму";
+        calcInput.placeholder = "Сумма";
     } else {
-        calcTitle.textContent = "Amount Calculator";
-        calcBtn.textContent = "Calculate";
-        calcInput.placeholder = "Enter amount";
+        calcTitle.textContent = "Amount Calc";
+        calcInput.placeholder = "Amount";
     }
 }
-
 applyCalcLang();
 
 if (calcBtn) {
     calcBtn.addEventListener('click', () => {
-        const amount = parseFloat(calcInput.value);
+        const val = parseFloat(calcInput.value);
 
-        if (isNaN(amount)) {
-            calcResult.textContent = lang === 'ru'
-                ? "Введите корректное число"
-                : "Enter valid number";
+        if (isNaN(val)) {
+            calcResult.textContent = (lang === 'ru')
+                ? "Введите число"
+                : "Enter number";
             calcResult.style.color = "#ff4d6d";
             return;
         }
 
-        const result = (amount / 11).toFixed(2);
+        const r = (val / 11).toFixed(2);
 
-        calcResult.textContent = lang === 'ru'
-            ? `Результат: ${result}`
-            : `Result: ${result}`;
-
+        calcResult.textContent = (lang === 'ru')
+            ? `Результат: ${r}`
+            : `Result: ${r}`;
         calcResult.style.color = "#4ade80";
     });
 }

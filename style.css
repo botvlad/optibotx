@@ -252,34 +252,48 @@ button:focus, select:focus {
     background: linear-gradient(90deg, #00c853, #8a2be2);
 }
 
-/* === Calculator UI FIXED === */
+/* == Compact Calculator == */
 .calculator-box {
-    margin-top: 25px;
-    padding: 18px;
-    background: rgba(255,255,255,0.05);
+    margin-top: 22px;
+    padding: 14px;
+    background: rgba(255,255,255,0.04);
     border-radius: 12px;
     text-align: center;
 }
 
 .calculator-box h3 {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 12px;
+    font-size: 16px;
+    margin-bottom: 10px;
 }
 
-.calc-input {
-    width: 100%;
-    padding: 12px;
-    font-size: 18px;
-    background: #1c1c1c;
-    border: 1px solid #444;
+.calc-row {
+    display: flex;
+    gap: 8px;
+}
+
+#calc-input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
     border-radius: 10px;
+    background: #1e1e1e;
+    border: 1px solid #444;
     color: #fff;
-    margin-bottom: 12px;
 }
 
-.calc-result {
-    margin-top: 12px;
-    font-size: 20px;
+#calc-btn {
+    padding: 10px 14px;
+    font-size: 18px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #00c853, #8a2be2);
+    border: none;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#calc-result {
+    margin-top: 10px;
+    font-size: 18px;
     font-weight: 700;
 }

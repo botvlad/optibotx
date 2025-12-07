@@ -59,14 +59,17 @@
         <div id="result" aria-live="polite"></div>
         <button id="install-btn" class="primary ripple hidden">Install App</button>
     
-<!-- === Calculator Bottom FIXED === -->
-<div class="calculator-box" style="width:100%;">
+<!-- === Calculator Bottom === -->
+<div class="calculator-box">
     <h3 id="calc-title">Расчёт суммы</h3>
-    <input id="calc-input" type="number" placeholder="Введите сумму" class="calc-input">
-    <button id="calc-btn" class="primary ripple">Рассчитать</button>
+
+    <div class="calc-row">
+        <input id="calc-input" type="number" placeholder="Сумма">
+        <button id="calc-btn">=</button>
+    </div>
+
     <div id="calc-result" class="calc-result"></div>
 </div>
-<!-- === END Calculator === -->
 </div>
 
     <script src="app.js"></script>
