@@ -252,28 +252,29 @@ button:focus, select:focus {
     background: linear-gradient(90deg, #00c853, #8a2be2);
 }
 
-/* Calculator UI */
+/* === Calculator UI === */
 .calculator-box {
     margin-top: 25px;
-    padding: 20px;
-    background: rgba(255,255,255,0.04);
-    border-radius: 14px;
+    padding: 18px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
     text-align: center;
+    margin-bottom: 10px;
 }
 
 .calculator-box h3 {
     font-size: 18px;
+    font-weight: 700;
     margin-bottom: 12px;
-    font-weight: 600;
 }
 
 .calc-input {
     width: 100%;
     padding: 12px;
     font-size: 18px;
-    border-radius: 10px;
+    background: #1c1c1c;
     border: 1px solid #444;
-    background: #1e1e1e;
+    border-radius: 10px;
     color: #fff;
     margin-bottom: 12px;
 }

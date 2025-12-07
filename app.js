@@ -441,8 +441,7 @@ timeButtons.forEach(btn => {
 
 updateActiveTime();
 
-
-// === Calculator ===
+// === Calculator Logic ===
 const calcInput = document.getElementById('calc-input');
 const calcBtn = document.getElementById('calc-btn');
 const calcResult = document.getElementById('calc-result');
@@ -463,20 +462,20 @@ function applyCalcLang() {
 applyCalcLang();
 
 calcBtn.addEventListener('click', () => {
-    const value = parseFloat(calcInput.value);
+    const amount = parseFloat(calcInput.value);
 
-    if (isNaN(value)) {
-        calcResult.textContent = (lang === 'ru')
+    if (isNaN(amount)) {
+        calcResult.textContent = lang === 'ru'
             ? "Введите корректное число"
-            : "Enter a valid number";
-        calcResult.style.color = "#f87171";
+            : "Enter valid number";
+
+        calcResult.style.color = "#ff4d6d";
         return;
     }
 
-    const result = (value / 11).toFixed(2);
+    const result = (amount / 11).toFixed(2);
 
-    calcResult.textContent = 
-        (lang === 'ru')
+    calcResult.textContent = lang === 'ru'
         ? `Результат: ${result}`
         : `Result: ${result}`;
 

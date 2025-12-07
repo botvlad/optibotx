@@ -36,6 +36,7 @@
             </div>
         </div>
 
+        <!-- Timeframe selection -->
         <div class="timeframe-row">
             <button class="time-btn" data-time="15s">15s</button>
             <button class="time-btn" data-time="30s">30s</button>
@@ -49,24 +50,24 @@
         </div>
 
         <button id="analyze" class="primary ripple">Analyze</button>
-
+        
         <div id="loading" class="hidden">
             <div class="spinner" role="status" aria-hidden="true"></div>
             <p id="loading-text">Analyzing...</p>
         </div>
-
+        
         <div id="result" aria-live="polite"></div>
-
-        <!-- Calculator -->
-        <div class="calculator-box">
-            <h3 id="calc-title">Расчёт суммы</h3>
-            <input id="calc-input" type="number" placeholder="Введите сумму" class="calc-input">
-            <button id="calc-btn" class="primary ripple">Рассчитать</button>
-            <div id="calc-result" class="calc-result"></div>
-        </div>
-
         <button id="install-btn" class="primary ripple hidden">Install App</button>
     </div>
+<!-- === Calculator Bottom === -->
+<div class="calculator-box">
+    <h3 id="calc-title">Расчёт суммы</h3>
+    <input id="calc-input" type="number" placeholder="Введите сумму" class="calc-input">
+    <button id="calc-btn" class="primary ripple">Рассчитать</button>
+    <div id="calc-result" class="calc-result"></div>
+</div>
+<!-- === END Calculator === -->
+
 
     <script src="app.js"></script>
 </body>
