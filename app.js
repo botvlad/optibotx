@@ -484,7 +484,12 @@ els.langToggle.addEventListener('click', applyCalcLang);
 
 
 let tvWidget;
+
 function loadChart(pair = "EUR/USD") {
+    if (typeof TradingView === "undefined") {
+        console.warn("TradingView not loaded yet");
+        return;
+    }
     const symbol = pair.replace("/", "");
     if (tvWidget) { tvWidget.setSymbol(symbol); return; }
     tvWidget = new TradingView.widget({
@@ -497,10 +502,13 @@ function loadChart(pair = "EUR/USD") {
         hide_legend: true,
         hide_side_toolbar: true,
         autosize: true,
-        backgroundColor: "rgba(0,0,0,0)",
         theme: "dark",
     });
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    loadChart("EUR/USD");
+});
 
 els.pairSelect.addEventListener("change", () => {
     const pair = els.pairSelect.value;
@@ -511,5 +519,3 @@ els.pairSelect.addEventListener("change", () => {
     document.getElementById("chart-box").style.display = "block";
     loadChart(pair);
 });
-
-loadChart("EUR/USD");
