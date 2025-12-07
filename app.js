@@ -440,3 +440,47 @@ timeButtons.forEach(btn => {
 });
 
 updateActiveTime();
+
+
+// === Calculator ===
+const calcInput = document.getElementById('calc-input');
+const calcBtn = document.getElementById('calc-btn');
+const calcResult = document.getElementById('calc-result');
+const calcTitle = document.getElementById('calc-title');
+
+function applyCalcLang() {
+    if (lang === 'ru') {
+        calcTitle.textContent = "Расчёт суммы";
+        calcBtn.textContent = "Рассчитать";
+        calcInput.placeholder = "Введите сумму";
+    } else {
+        calcTitle.textContent = "Amount Calculator";
+        calcBtn.textContent = "Calculate";
+        calcInput.placeholder = "Enter amount";
+    }
+}
+
+applyCalcLang();
+
+calcBtn.addEventListener('click', () => {
+    const value = parseFloat(calcInput.value);
+
+    if (isNaN(value)) {
+        calcResult.textContent = (lang === 'ru')
+            ? "Введите корректное число"
+            : "Enter a valid number";
+        calcResult.style.color = "#f87171";
+        return;
+    }
+
+    const result = (value / 11).toFixed(2);
+
+    calcResult.textContent = 
+        (lang === 'ru')
+        ? `Результат: ${result}`
+        : `Result: ${result}`;
+
+    calcResult.style.color = "#4ade80";
+});
+
+els.langToggle.addEventListener('click', applyCalcLang);
