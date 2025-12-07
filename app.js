@@ -481,3 +481,35 @@ if (calcBtn) {
 }
 
 els.langToggle.addEventListener('click', applyCalcLang);
+
+
+let tvWidget;
+function loadChart(pair = "EUR/USD") {
+    const symbol = pair.replace("/", "");
+    if (tvWidget) { tvWidget.setSymbol(symbol); return; }
+    tvWidget = new TradingView.widget({
+        container_id: "tvchart",
+        width: "100%",
+        height: 180,
+        symbol: symbol,
+        interval: "1",
+        hide_top_toolbar: true,
+        hide_legend: true,
+        hide_side_toolbar: true,
+        autosize: true,
+        backgroundColor: "rgba(0,0,0,0)",
+        theme: "dark",
+    });
+}
+
+els.pairSelect.addEventListener("change", () => {
+    const pair = els.pairSelect.value;
+    if (pair.includes("Фото") || pair.includes("Photo")) {
+        document.getElementById("chart-box").style.display = "none";
+        return;
+    }
+    document.getElementById("chart-box").style.display = "block";
+    loadChart(pair);
+});
+
+loadChart("EUR/USD");
