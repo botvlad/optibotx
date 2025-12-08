@@ -1,48 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI OptiBotX</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://s3.tradingview.com/tv.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI OptiBotX</title>
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+<script src="https://s3.tradingview.com/tv.js"></script>
 </head>
-<body>
-    <div class="app">
-        <header>
-            <h1>AI OptiBotX</h1>
-            <button id="lang" class="lang-btn">RU</button>
-        </header>
+<body class="dark fade-in">
 
-        <label class="lbl">Select currency pair:</label>
-        <select id="pair" class="pair-select">
-            <option>EUR/USD</option>
-            <option>GBP/USD</option>
-            <option>USD/JPY</option>
-        </select>
+<!-- SPLASH SCREEN -->
+<div id="splash">
+    <h1 class="splash-title">OptiBotX</h1>
+</div>
 
-        <div id="chart-box">
-            <div id="tvchart"></div>
-        </div>
+<div class="app">
+<header class="slide-down">
+<h1>AI OptiBotX</h1>
+<button id="theme" class="theme-btn">☀</button>
+</header>
 
-        <div class="timeframe">
-            <button class="tf">5s</button>
-            <button class="tf">10s</button>
-            <button class="tf">15s</button>
-            <button class="tf">30s</button>
-            <button class="tf">1m</button>
-            <button class="tf">2m</button>
-            <button class="tf">4m</button>
-            <button class="tf">5m</button>
-            <button class="tf">10m</button>
-            <button class="tf">20m</button>
-            <button class="tf">1h</button>
-        </div>
+<label class="lbl">Select currency pair:</label>
+<select id="pair" class="pair-select pop">
+<option>EUR/USD</option>
+<option>GBP/USD</option>
+<option>USD/JPY</option>
+</select>
 
-        <button id="analyze" class="analyze-btn">Analyze</button>
-        <div id="result"></div>
-    </div>
+<div id="chart-box" class="chart-card blur fade-in">
+<div id="tvchart"></div>
+</div>
 
-    <script src="app.js"></script>
+<div class="timeframe">
+<button class="tf">5s</button>
+<button class="tf">10s</button>
+<button class="tf">15s</button>
+<button class="tf">30s</button>
+<button class="tf">1m</button>
+<button class="tf">2m</button>
+<button class="tf">4m</button>
+<button class="tf">5m</button>
+<button class="tf">10m</button>
+<button class="tf">20m</button>
+<button class="tf">1h</button>
+</div>
+
+<button id="analyze" class="analyze-btn glow">Analyze</button>
+<div id="result"></div>
+
+<nav class="bottom-nav slide-up">
+<button class="nav-btn">Home</button>
+<button class="nav-btn">Chart</button>
+<button class="nav-btn">AI</button>
+<button class="nav-btn">Settings</button>
+</nav>
+
+</div>
+<script src="app.js"></script>
 </body>
 </html>
